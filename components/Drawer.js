@@ -87,7 +87,7 @@ class DrawerItem extends Component {
               <ListItem.Title
                 style={{
                   color: focused ? theme.COLORS.PRIMARY : 'white',
-                  fontSize: 25,
+                  fontSize: 22,
                 }}>
                 {title}
               </ListItem.Title>

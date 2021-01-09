@@ -123,15 +123,7 @@ function BottomStack() {
           ),
         }}
       />
-      <Bottom.Screen
-        name="About"
-        component={AboutStack}
-        options={{
-          tabBarIcon: ({color, size}) => (
-            <Icon name="info" type="entypo" color={color} size={size} />
-          ),
-        }}
-      />
+
       <Bottom.Screen
         name="Services"
         component={ServicesStack}
