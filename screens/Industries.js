@@ -1,23 +1,15 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
-import {Icon, Card} from 'react-native-elements';
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
+import {Icon} from 'react-native-elements';
 import {ScrollView} from 'react-native-gesture-handler';
-import {Title,Accordion} from '../components';
+import {Title, CardComponent} from '../components';
 
 import {theme} from '../constants';
 import {INDUSTRIES} from '../constants/data';
-const {width, height} = Dimensions.get('window');
 
 const Industries = () => {
-  const [enabled, setEnabled] = useState(false);
   return (
-    <ScrollView showsVerticalScrollIndicator={false} >
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <View style={styles.main}>
           <Icon name="layers" type="fontawesome" size={45} color="white" />
@@ -26,8 +18,8 @@ const Industries = () => {
           </Title>
         </View>
         <View>
-          {INDUSTRIES.map((item,index) => (
-            <Accordion item={item} key={index} />
+          {INDUSTRIES.map((item, index) => (
+            <CardComponent item={item} key={index} />
           ))}
         </View>
       </View>

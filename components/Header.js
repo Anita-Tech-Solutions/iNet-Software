@@ -46,7 +46,13 @@ class HeaderComponent extends Component {
         <Text h4 h4Style={{color: 'white', fontWeight: 'bold'}}>
           iNet
         </Text>
-        <Text style={{fontSize: 20, color: 'white', marginLeft: 10}}>
+        <Text
+          h4
+          h4Style={{
+            color: 'white',
+            marginLeft: 10,
+            fontWeight: 'bold',
+          }}>
           Software
         </Text>
       </View>
@@ -58,9 +64,9 @@ class HeaderComponent extends Component {
       <Header
         barStyle="light-content"
         statusBarProps={{
-          backgroundColor: theme.COLORS.BUTTON,
+          backgroundColor: theme.COLORS.PRIMARY,
         }}
-        containerStyle={{backgroundColor: theme.COLORS.BUTTON}}
+        containerStyle={{backgroundColor: theme.COLORS.PRIMARY}}
         leftComponent={this.LeftComponent}
         centerComponent={this.CenterComponent}
       />

@@ -88,7 +88,7 @@ const Welcome = ({navigation}) => {
                 backgroundColor: '#ff9600',
               }}
               onPress={() => {
-                navigation.navigate('Home');
+                navigation.navigate('App');
               }}>
               <Text style={{color: 'white'}}>
                 {completed ? "Let's Go" : 'Skip'}

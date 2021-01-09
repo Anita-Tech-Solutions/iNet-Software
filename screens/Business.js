@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, ScrollView, Dimensions} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {Title, Accordion} from '../components';
+import {Title, CardComponent} from '../components';
 
 import {theme} from '../constants';
 import {BUSSINESS} from '../constants/data';
 
 const Business = () => {
-  const [] = useState(false);
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -20,7 +18,7 @@ const Business = () => {
         </View>
         <View>
           {BUSSINESS.map((item, index) => (
-            <Accordion item={item} key={index} />
+            <CardComponent item={item} key={index} />
           ))}
         </View>
       </View>

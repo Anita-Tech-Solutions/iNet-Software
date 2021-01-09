@@ -10,19 +10,21 @@ const {width} = Dimensions.get('window');
 
 const Contact = () => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false} >
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
-        <View style={{marginTop: 20}}>
+        <View style={styles.section}>
           <Title>Please ask the query for feel free</Title>
-          <Subtitle>
+          <Subtitle style={{textAlign: 'center'}}>
             Our team will soon be your recommendation Will solve
           </Subtitle>
         </View>
-        <View style={{marginTop: 20}}>
+        <View style={styles.section}>
           <Title>Let’s cooperate!</Title>
-          <Subtitle>
+          <Subtitle style={{textAlign: 'center'}}>
             Let’s become partners to build a better future for today.
           </Subtitle>
+        </View>
+        <View style={styles.card}>
           <Input
             placeholder="Name *"
             leftIcon={
@@ -63,40 +65,40 @@ const Contact = () => {
             }}
           />
         </View>
-        <View>
+        <View style={styles.section}>
           <Title>Our Offices</Title>
-          <Subtitle>You’ll need these advantages to take the lead.</Subtitle>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            {OFFICES.map(({id, country, address, email, mobile}) => (
-              <Card
-                key={id}
-                containerStyle={{
-                  width: width,
-                  justifyContent: 'center',
-                }}>
-                <Icon name="location-pin" size={35} color="purple" />
-                <Title>{country}</Title>
-                <Subtitle>
-                  <Icon name="location-pin" color="purple" size={20} />
-                  {address}
-                </Subtitle>
-                <Subtitle>
-                  <Icon name="mail" type="antdesign" size={20} color="purple" />
-                  {email}
-                </Subtitle>
-                <Subtitle>
-                  <Icon
-                    name="mobile1"
-                    type="antdesign"
-                    color="purple"
-                    size={20}
-                  />
-                  {mobile}
-                </Subtitle>
-              </Card>
-            ))}
-          </ScrollView>
+          <Subtitle style={{textAlign: 'center'}}>
+            You’ll need these advantages to take the lead.
+          </Subtitle>
         </View>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{margin:15}}>
+          {OFFICES.map(({id, country, address, email, mobile}) => (
+            <Card key={id} containerStyle={[{width: width / 1.2}, styles.card]}>
+              <Icon name="location-pin" size={35} color="purple" />
+              <Title>{country}</Title>
+              <Subtitle>
+                <Icon name="location-pin" color="purple" size={20} />
+                {address}
+              </Subtitle>
+              <Subtitle>
+                <Icon name="mail" type="antdesign" size={20} color="purple" />
+                {email}
+              </Subtitle>
+              <Subtitle>
+                <Icon
+                  name="mobile1"
+                  type="antdesign"
+                  color="purple"
+                  size={20}
+                />
+                {mobile}
+              </Subtitle>
+            </Card>
+          ))}
+        </ScrollView>
       </View>
     </ScrollView>
   );
@@ -106,6 +108,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  section: {
+    marginTop: 20,
+    padding: 15,
+  },
+  card: {
+    margin: 20,
+    padding: 15,
+    borderWidth: 1,
+    borderRadius: 10,
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    shadowOffset: {width: 10, height: 10},
+    elevation: 2,
   },
 });
 

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Rubik-Regular',
     fontWeight: '400',
     color: theme.COLORS.PRIMARY,
-    fontSize:25,
+    fontSize:23,
     textAlign:"center"
   },
 });

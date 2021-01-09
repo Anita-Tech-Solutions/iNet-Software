@@ -98,144 +98,497 @@ const OFFICES = [
 const SERVICES = [
   {
     id: 1,
-    category: 'Apps Development',
-    subcategory: [
-      'Ios App Development',
-      'Andrid App Development',
-      'Hybrid App Development',
-      'Shopify App Development',
-      'Dojo App Development',
+    title: 'Apps Development',
+    iconName: 'android',
+    iconType: 'antdesign',
+    color: 'green',
+    subtitle: [
+      {
+        title: 'IOS',
+        iconName: 'apple-o',
+        iconType: 'antdesign',
+        color: 'orange',
+      },
+      {
+        title: 'Android',
+        iconName: 'android',
+        iconType: 'antdesign',
+        color: 'green',
+      },
+      {
+        title: 'Shopify',
+        iconName: 'shopify',
+        iconType: 'fontisto',
+        color: 'green',
+      },
+      {
+        title: 'Hybrid',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Dojo',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 2,
-    category: 'Web & FS Development',
-    subcategory: [
-      'Ecommerce development',
-      'Erp development',
-      'Crm development',
-      'Cms development',
-      'Full stack development',
+    title: 'Web & fs Development',
+    iconName: 'web',
+    iconType: 'foundation',
+    color: 'blue',
+    subtitle: [
+      {
+        title: 'Ecommerce',
+        iconName: 'chart',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'ERP',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'CRM',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'CMS',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'FULL STACK',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 3,
-    category: 'Web Designing',
-    subcategory: [
-      'Illustrative Designing',
-      'Mobile Friendly Design',
-      'Typo Graphy Design',
-      'Spring Scripting Design',
-      'Responsive Design',
+    title: 'Web designing',
+    iconName: 'dribbble',
+    iconType: 'entypo',
+    color: 'orange',
+    subtitle: [
+      {
+        title: 'Illustrative',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Mobile',
+        iconName: 'mobile1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Typo',
+        iconName: 'type',
+        iconType: 'feather',
+        color: 'purple',
+      },
+      {
+        title: 'Spring',
+        iconName: '',
+        iconType: '',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 4,
-    category: 'Aws Cloud Development',
-    subcategory: [
-      'Brand Agency Studio',
-      'Electric Vehicle Invention',
-      'Spring Branding Touchpoint',
-      'Smart Technology Source',
+    title: 'Aws Cloud Development',
+    iconName: 'cloud',
+    iconType: 'entypo',
+    color: 'white',
+    subtitle: [
+      {
+        title: 'Brand Agency Studio',
+        iconName: 'cloud',
+        iconType: 'entypo',
+        color: 'purple',
+      },
+      {
+        title: 'Electric Vehicle Invention',
+        iconName: 'car',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Spiral Branding touchtip',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Smart technology source',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
     ],
   },
 ];
 
-
-const BUSSINESS=[
+const BUSSINESS = [
   {
     id: 1,
-    category: 'Technologies',
-    subcategory: [
-      'Space Technologies',
-      'AWS Cloud',
-      'QGIS/GIS Technologies',
-      'Cyber Security',
-      'Oracle Technologies',
+    title: 'Technologies',
+    iconName: 'setting',
+    iconType: 'antdesign',
+    color: 'purple',
+    subtitle: [
+      {
+        title: 'Space',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'AWS CLoud',
+        iconName: 'cloud',
+        iconType: '',
+        color: 'purple',
+      },
+      {
+        title: 'QGIS/GIS',
+        iconName: 'flow-line',
+        iconType: 'entypo',
+        color: 'purple',
+      },
+      {
+        title: 'Cyber Security',
+        iconName: 'security',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
+      {
+        title: 'Oracle Technology',
+        iconName: 'oracle',
+        iconType: 'fontisto',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 2,
-    category: 'Games Development',
-    subcategory: [
-      '3D Video Games',
-      'Adventure Games',
-      'Entertainment Games',
-      'Action Games',
-      'Sport Games',
+    title: 'Games Development',
+    iconName: 'game-controller',
+    iconType: 'entypo',
+    color: 'magenta',
+    subtitle: [
+      {
+        title: '3D Video Game',
+        iconName: 'game-controller',
+        iconType: 'entypo',
+        color: 'purple',
+      },
+      {
+        title: 'Adventure',
+        iconName: 'game-controller',
+        iconType: 'entypo',
+        color: 'purple',
+      },
+      {
+        title: 'Entertainment',
+        iconName: 'game-controller',
+        iconType: 'entypo',
+        color: 'purple',
+      },
+      {
+        title: 'Action',
+        iconName: 'game-controller',
+        iconType: 'entypo',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 3,
-    category: 'Robotics',
-    subcategory: [
-      'Space Robots',
-      'Industrial Robots',
-      'House Hold Robots',
-      'Services Robots',
-      'Smedicals Robots',
+    title: 'Robotics',
+    iconName: 'archive',
+    iconType: 'fontawesome5',
+    color: '',
+    subtitle: [
+      {
+        title: 'Space',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Industrial',
+        iconName: 'settings',
+        iconType: 'feather',
+        color: 'purple',
+      },
+      {
+        title: 'Household',
+        iconName: 'home',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Services',
+        iconName: 'clipboard',
+        iconType: 'entypo',
+        color: 'purple',
+      },
+      {
+        title: 'Smedicals',
+        iconName: 'doctor',
+        iconType: 'fontisto',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 4,
-    category: 'Web Animation',
-    subcategory: [
-      'Navigation and Menus',
-      'Galleries and Slideshow',
-      'Loading Aniamtion',
-      'Page Motion',
-      'Scrolling'
+    title: 'Web Animation',
+    iconName: 'spinner',
+    iconType: 'evilicon',
+    color: 'red',
+    subtitle: [
+      {
+        title: 'Navigation and menu',
+        iconName: 'navigation',
+        iconType: 'feather',
+        color: 'purple',
+      },
+      {
+        title: 'Gallery and slideshow',
+        iconName: 'folderopen',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Loading',
+        iconName: 'spinner',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Page motion',
+        iconName: 'page-multiple',
+        iconType: 'foundation',
+        color: 'purple',
+      },
+      {
+        title: 'Scrolling',
+        iconName: 'animation',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
     ],
   },
-]
+];
 
-
-const INDUSTRIES=[
+const INDUSTRIES = [
   {
     id: 1,
-    category: 'Film',
-    subcategory: [
-      'Bollywood',
-      'Hollywood',
-      'Sandalwood',
-      'Mollywood',
-      'Dhollywood/Gollywood',
+    title: 'Film',
+    iconName: 'movie',
+    iconType: '',
+    color: 'black',
+    subtitle: [
+      {
+        title: 'Bollywood',
+        iconName: 'movie',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
+      {
+        title: 'Hollywood',
+        iconName: 'movie',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
+      {
+        title: 'Sandalwood',
+        iconName: 'movie',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
+      {
+        title: 'Mollywood',
+        iconName: 'movie',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
+      {
+        title: 'Dollywood',
+        iconName: 'movie',
+        iconType: 'materialicons',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 2,
-    category: 'Health',
-    subcategory: [
-      'Medical Practice Management',
-      'Master Patient Index',
-      'Medical Billing Software',
-      'Patient Portal',
-      'Urgent Care Application',
+    title: 'Health',
+    iconName: 'doctor',
+    iconType: 'fontisto',
+    color: 'green',
+    subtitle: [
+      {
+        title: 'Medical Practice',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Master Patient',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Medical Billing',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
+      {
+        title: 'Urgent',
+        iconName: 'archive',
+        iconType: 'evilicon',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 3,
-    category: 'Space',
-    subcategory: [
-      'Satellite Technology',
-      'Non-Rocket spacelaunch',
-      'Space-Flight Technology',
-      'Space Exploration Technology',
-      'Space Craft TEchnology',
+    title: 'Space',
+    iconName: 'rocket1',
+    iconType: 'antdesign',
+    color: 'rgb(0, 204, 255)',
+    subtitle: [
+      {
+        title: 'Satellite',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Non-Rocket',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Space-Flight',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Space-exploration',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Space-craft',
+        iconName: 'rocket1',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
     ],
   },
   {
     id: 4,
-    category: 'Machinery/Manufacturing',
-    subcategory: [
-      'ERP Software',
-      'CMS Portal',
-      'CRM Billing Software',
-      'Accounting Portal',
-      'CAM/CAE Software'
+    title: 'Machinery',
+    iconName: 'setting',
+    iconType: 'antdesign',
+    color: '#669900',
+    subtitle: [
+      {
+        title: 'Erp Software',
+        iconName: 'setting',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'CMS Portal',
+        iconName: 'setting',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Crm Billing',
+        iconName: 'setting',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'Accounting',
+        iconName: 'setting',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
+      {
+        title: 'CAM/CAE',
+        iconName: 'setting',
+        iconType: 'antdesign',
+        color: 'purple',
+      },
     ],
   },
-]
+];
 
+const PLAN = [
+  {
+    id: 1,
+    title: 'Free Proposal',
+    description:
+      'Projects We send the proposal according to clients requirments for Apps website,desinging and aws cloud 24/7 phone and email support',
+    price: '$0',
+    iconName: '',
+    iconType: '',
+    color: '',
+  },
+  {
+    id: 2,
+    title: 'Mobile Apps',
+    description:
+      'We development technologies in ionic,cordova,iOS,Java,Nodejs ReactNative,shophify 24/7 phone and email support',
+    price: '$350',
+    iconName: '',
+    iconType: '',
+    color: '',
+  },
+  {
+    id: 3,
+    title: 'Website Development',
+    description:
+      'we development technologies in java,python+django,PHP+MySQL Nodejs,scotsbyJs,viewjs,jsonAPI 24/7 phone and email support',
+    price: '$250',
+    iconName: 'web',
+    iconType: 'foundation',
+    color: 'blue',
+  },
+  {
+    id: 4,
+    title: 'Digital Marketing',
+    description:
+      'We provide whole seo tools like adwords,seosmalltools social media and smo 24/7 phone and email support',
+    price: '$150',
+    iconName: 'fire',
+    iconType: 'fontisto',
+    color: '',
+  },
+];
 
-export {HOME, HOME2, OFFICES,SERVICES,BUSSINESS,INDUSTRIES};
+export {HOME, HOME2, OFFICES, SERVICES, BUSSINESS, INDUSTRIES,PLAN};

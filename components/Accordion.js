@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
 
-import {
-  View,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import {Card, Icon} from 'react-native-elements';
 
-import {Title, Subtitle} from '../components';
+import Title from './Title';
+import Subtitle from './Subtitle';
 import {theme} from '../constants';
 
 const Accordion = ({item}) => {

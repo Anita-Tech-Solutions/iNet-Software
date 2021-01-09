@@ -108,7 +108,7 @@ function BottomStack() {
   return (
     <Bottom.Navigator
       tabBarOptions={{
-        activeTintColor: theme.COLORS.BUTTON,
+        activeTintColor: 'red',
         inactiveTintColor: 'white',
         style: {
           backgroundColor: theme.COLORS.PRIMARY,
@@ -189,7 +189,7 @@ function AppStack() {
 
 export default function OnboardingStack() {
   return (
-    <Stack.Navigator mode="card" headerMode="none" initialRouteName="Welcome">
+    <Stack.Navigator mode="card" headerMode="none" initialRouteName="App">
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="App" component={AppStack} />

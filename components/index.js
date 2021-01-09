@@ -5,7 +5,10 @@ import Subtitle from './Subtitle';
 import Heading from './Heading';
 import Subheading from './Subheading';
 import SliderComponent from './Slider';
-import Accordion from './Accordion'
+import Accordion from './Accordion';
+import CardComponent from './Card';
+import CardComponent2 from './Card2';
+import CardComponent3 from './Card3';
 
 export {
   Header,
@@ -16,4 +19,7 @@ export {
   Subheading,
   SliderComponent,
   Accordion,
+  CardComponent,
+  CardComponent2,
+  CardComponent3,
 };
