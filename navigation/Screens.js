@@ -195,7 +195,7 @@ function AppStack() {
 
 export default function OnboardingStack() {
   return (
-    <Stack.Navigator mode="card" headerMode="none" initialRouteName="App">
+    <Stack.Navigator mode="card" headerMode="none">
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="App" component={AppStack} />

@@ -8,10 +8,10 @@ import {
   ImageBackground,
 } from 'react-native';
 
-import {Button, Text} from 'react-native-elements';
+import {Text} from 'react-native-elements';
 import {Subtitle, Title} from '../components';
 
-const {width, height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('screen');
 // constants
 import {theme} from '../constants';
 
@@ -68,8 +68,8 @@ const Welcome = ({navigation}) => {
               resizeMode={'contain'}
               style={styles.image}>
               <View style={styles.textContainer}>
-                <Title>{item.title}</Title>
-                <Subtitle>{item.description}</Subtitle>
+                <Title style={{color:"white",padding:10}} >{item.title}</Title>
+                <Subtitle  style={{color:"white",fontSize:10,textAlign:"center",padding:10}} >{item.description}</Subtitle>
               </View>
             </ImageBackground>
             <TouchableOpacity
