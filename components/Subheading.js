@@ -13,7 +13,6 @@ const Subheading = ({children, style}) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     justifyContent: 'center',
   },
   text: {

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
 import {Button, Card, Icon, Input} from 'react-native-elements';
 import {ScrollView} from 'react-native-gesture-handler';
-import {Subtitle, Title} from '../components';
+import {Subheading, Subtitle, Title} from '../components';
 import {theme} from '../constants';
 import {OFFICES} from '../constants/data';
 
@@ -74,29 +74,34 @@ const Contact = () => {
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
-          style={{margin:15}}>
+          style={{margin: 10}}>
           {OFFICES.map(({id, country, address, email, mobile}) => (
-            <Card key={id} containerStyle={[{width: width / 1.2}, styles.card]}>
+            <View
+              key={id}
+              style={[
+                {width: width / 1.2, justifyContent: 'space-around'},
+                styles.card,
+              ]}>
               <Icon name="location-pin" size={35} color="purple" />
               <Title>{country}</Title>
-              <Subtitle>
+              <View style={styles.inner}>
                 <Icon name="location-pin" color="purple" size={20} />
-                {address}
-              </Subtitle>
-              <Subtitle>
+                <Subheading>{address}</Subheading>
+              </View>
+              <View style={styles.inner}>
                 <Icon name="mail" type="antdesign" size={20} color="purple" />
-                {email}
-              </Subtitle>
-              <Subtitle>
+                <Subheading>{email}</Subheading>
+              </View>
+              <View style={styles.inner}>
                 <Icon
                   name="mobile1"
                   type="antdesign"
                   color="purple"
                   size={20}
                 />
-                {mobile}
-              </Subtitle>
-            </Card>
+                <Subheading>{mobile}</Subheading>
+              </View>
+            </View>
           ))}
         </ScrollView>
       </View>
@@ -114,14 +119,18 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   card: {
-    margin: 20,
-    padding: 15,
-    borderWidth: 1,
-    borderRadius: 10,
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    shadowOffset: {width: 10, height: 10},
-    elevation: 2,
+    borderColor:"white",
+    borderRadius:14,
+    borderWidth:.6,
+    shadowColor:"gray",
+    elevation:1,
+    margin:10,
+    padding:10,
+  },
+  inner: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
 });
 

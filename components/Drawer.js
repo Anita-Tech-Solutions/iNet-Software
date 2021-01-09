@@ -61,6 +61,14 @@ class DrawerItem extends Component {
             size={20}
           />
         );
+      case 'Share':
+        return (
+          <Icon
+            name="share"
+            color={focused ? theme.COLORS.PRIMARY : 'white'}
+            size={20}
+          />
+        );
       default:
         return;
     }
@@ -76,8 +84,9 @@ class DrawerItem extends Component {
         <View style={[styles.defaultStyle]}>
           <ListItem
             containerStyle={{
-              padding: 5,
+              padding: 15,
               margin: 5,
+              borderRadius: 10,
               backgroundColor: focused
                 ? theme.COLORS.WHITE
                 : theme.COLORS.PRIMARY,
@@ -87,7 +96,8 @@ class DrawerItem extends Component {
               <ListItem.Title
                 style={{
                   color: focused ? theme.COLORS.PRIMARY : 'white',
-                  fontSize: 22,
+                  fontSize: 20,
+                  fontFamily: 'Rubik-Light',
                 }}>
                 {title}
               </ListItem.Title>
@@ -104,6 +114,7 @@ export default DrawerItem;
 const styles = StyleSheet.create({
   defaultStyle: {
     backgroundColor: theme.COLORS.PRIMARY,
+    borderRadius: 10,
   },
   activeStyle: {
     backgroundColor: theme.COLORS.BUTTON_COLOR,

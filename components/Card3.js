@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     borderRadius: 10,
-    elevation: 2,
+    elevation: 5,
     shadowColor: 'purple',
+    shadowOpacity:.5,
     borderColor: 'purple',
-    borderWidth: 0.4,
+    borderWidth: 1.3,
   },
   iconContainer: {
     width: 70,

@@ -9,6 +9,7 @@ import Accordion from './Accordion';
 import CardComponent from './Card';
 import CardComponent2 from './Card2';
 import CardComponent3 from './Card3';
+import MyTabBar from './Bottom'
 
 export {
   Header,
@@ -22,4 +23,5 @@ export {
   CardComponent,
   CardComponent2,
   CardComponent3,
+  MyTabBar,
 };

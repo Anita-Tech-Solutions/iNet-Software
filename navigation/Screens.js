@@ -5,7 +5,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 //components
-import {Header} from '../components';
+import {BottomItem, Header, MyTabBar} from '../components';
 import {theme} from '../constants';
 import CustomDrawerContent from './Menu';
 
@@ -18,6 +18,7 @@ import Services from '../screens/Services';
 import Business from '../screens/Business';
 import Industries from '../screens/Industries';
 import Contact from '../screens/Contact';
+import Share from '../screens/Share';
 
 //stacks
 const Stack = createStackNavigator();
@@ -104,14 +105,36 @@ function ContactStack(props) {
   );
 }
 
+function ShareStack(props) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Share"
+        component={Share}
+        options={{
+          header: () => <Header {...props} />,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
 function BottomStack() {
   return (
     <Bottom.Navigator
+      initialRouteName="Home"
+      tabBar={(props) => <MyTabBar {...props} />}
       tabBarOptions={{
-        activeTintColor: 'red',
+        activeTintColor: theme.COLORS.BUTTON,
         inactiveTintColor: 'white',
+        labelStyle: {
+          fontFamily: 'Rubik-Light',
+        },
         style: {
           backgroundColor: theme.COLORS.PRIMARY,
+          margin: 10,
+          borderRadius: 10,
         },
       }}>
       <Bottom.Screen
@@ -119,11 +142,10 @@ function BottomStack() {
         component={HomeStack}
         options={{
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" color={color} size={size} />
+            <Icon name="home" type="feather" color={color} size={size} />
           ),
         }}
       />
-
       <Bottom.Screen
         name="Services"
         component={ServicesStack}
@@ -151,15 +173,6 @@ function BottomStack() {
           ),
         }}
       />
-      <Bottom.Screen
-        name="Contact"
-        component={ContactStack}
-        options={{
-          tabBarIcon: ({color, size}) => (
-            <Icon name="contacts" type="antdesign" color={color} size={size} />
-          ),
-        }}
-      />
     </Bottom.Navigator>
   );
 }
@@ -175,6 +188,7 @@ function AppStack() {
       <Drawer.Screen name="Business" component={BusinessStack} />
       <Drawer.Screen name="Industries" component={IndustriesStack} />
       <Drawer.Screen name="Contact" component={ContactStack} />
+      <Drawer.Screen name="Share" component={ShareStack} />
     </Drawer.Navigator>
   );
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {Title, CardComponent} from '../components';
@@ -30,12 +30,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    paddingBottom: 100,
   },
   main: {
     backgroundColor: theme.COLORS.PRIMARY,
-    padding: theme.SIZES.BASE * 2,
-    borderBottomRightRadius: theme.SIZES.BASE * 3,
-    borderTopLeftRadius: theme.SIZES.BASE * 3,
+    padding: theme.SIZES.BASE,
+    margin: theme.SIZES.BASE,
+    borderRadius: theme.SIZES.BASE * 2,
   },
 });
 

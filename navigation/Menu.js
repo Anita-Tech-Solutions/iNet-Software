@@ -1,8 +1,9 @@
 import React from 'react';
+import {Text} from 'react-native';
 import {ScrollView, StyleSheet, View, Image} from 'react-native';
 import {} from 'react-native-elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {DrawerItem as DrawerCustomItem} from '../components/';
+import {DrawerItem as DrawerCustomItem, Subtitle, Title} from '../components/';
 import {theme} from '../constants/';
 
 const CustomDrawerContent = ({drawerPosition, navigation, state}) => {
@@ -14,6 +15,7 @@ const CustomDrawerContent = ({drawerPosition, navigation, state}) => {
     'Business',
     'Industries',
     'Contact',
+    'Share',
   ];
 
   return (
@@ -49,6 +51,11 @@ const CustomDrawerContent = ({drawerPosition, navigation, state}) => {
           })}
         </ScrollView>
       </View>
+      <View style={styles.version}>
+        <Text style={{bottom: 10, color: 'white', fontFamily: 'Rubik-Light'}}>
+          App Version 1.0.0
+        </Text>
+      </View>
     </View>
   );
 };
@@ -74,6 +81,11 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 250,
+  },
+  version: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
 });
 

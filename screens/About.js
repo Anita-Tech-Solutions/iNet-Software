@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
 import {Button, Icon, Input, SocialIcon} from 'react-native-elements';
 import {ScrollView} from 'react-native-gesture-handler';
 import {Subtitle, Title} from '../components';
 import {theme} from '../constants';
+
+const {width} = Dimensions.get('window');
 
 const About = () => {
   return (
@@ -35,7 +37,14 @@ const About = () => {
               <Icon name="mail" type="antdesign" size={20} color="purple" />
             }
           />
-          <Button title="Send" type="outline" />
+          <Button
+            title="Send"
+            type="solid"
+            buttonStyle={{
+              backgroundColor: theme.COLORS.BUTTON,
+              width: width / 2,
+            }}
+          />
         </View>
         <View style={styles.section}>
           <Title>Sales Office</Title>
@@ -52,10 +61,26 @@ const About = () => {
         </View>
         <View style={styles.section}>
           <Title>Connect With us</Title>
-          <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+            }}>
             <SocialIcon type="facebook" />
             <SocialIcon type="twitter" />
             <SocialIcon type="instagram" />
+            <View
+              style={{
+                backgroundColor: 'green',
+                width: 50,
+                height: 50,
+                borderRadius:50,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Icon name="whatsapp" type="fontisto" size={25} color="white" />
+            </View>
           </View>
         </View>
       </View>
@@ -79,13 +104,12 @@ const styles = StyleSheet.create({
     color: theme.COLORS.GRAY,
   },
   card: {
-    margin: 20,
+    margin: 10,
     padding: 15,
-    borderWidth: 1,
-    borderRadius: 10,
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    shadowOffset: {width: 10, height: 10},
+    borderWidth: .6,
+    borderRadius: 15,
+    shadowColor: 'gray',
+    borderColor: "white",
     elevation: 2,
   },
 });

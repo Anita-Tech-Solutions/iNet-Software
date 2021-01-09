@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, StyleSheet, ScrollView, Dimensions} from 'react-native';
+import React, {Component, useLayoutEffect} from 'react';
+import {View, StyleSheet, ScrollView, Dimensions, Alert} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 import {Title, CardComponent} from '../components';
@@ -8,36 +8,39 @@ import {SERVICES} from '../constants/data';
 
 const {width} = Dimensions.get('window');
 
-const Services = () => {
-  return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.container}>
-        <View style={styles.main}>
-          <Icon name="settings" color="white" size={45} />
-          <Title style={{color: 'white', fontFamily: 'Rubik-Bold'}}>
-            Services
-          </Title>
+class Services extends Component {
+  render() {
+    return (
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
+          <View style={styles.main}>
+            <Icon name="settings" color="white" size={45} />
+            <Title style={{color: 'white', fontFamily: 'Rubik-Bold'}}>
+              Services
+            </Title>
+          </View>
+          <View>
+            {SERVICES.map((item, index) => (
+              <CardComponent item={item} key={index} />
+            ))}
+          </View>
         </View>
-        <View>
-          {SERVICES.map((item, index) => (
-            <CardComponent item={item} key={index} />
-          ))}
-        </View>
-      </View>
-    </ScrollView>
-  );
-};
+      </ScrollView>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+    paddingBottom:100,
   },
   main: {
     backgroundColor: theme.COLORS.PRIMARY,
-    padding: theme.SIZES.BASE * 2,
-    borderBottomRightRadius: theme.SIZES.BASE * 3,
-    borderTopLeftRadius: theme.SIZES.BASE * 3,
+    padding: theme.SIZES.BASE,
+    margin:theme.SIZES.BASE,
+    borderRadius: theme.SIZES.BASE * 2,
   },
   cardContainer: {
     alignItems: 'center',

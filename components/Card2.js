@@ -1,17 +1,55 @@
-import React from 'react';
-import {View, Text, StyleSheet, Dimensions, ScrollView} from 'react-native';
+import React, {useEffect} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Animated,
+  Easing,
+} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 const {width} = Dimensions.get('window');
 
 const CardComponent2 = ({item}) => {
+  let opacity = new Animated.Value(0);
+
+  useEffect(() => {
+    animate();
+  },[]);
+  const animate = (easing) => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 1000,
+      easing: Easing.circle,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const size = opacity.interpolate({
+    inputRange: [0, 1],
+    outputRange: [200, width / 2.3],
+  });
+
+  const animatedStyle = [
+    {
+      opacity,
+      width: size,
+      height: size,
+    },
+  ];
   return (
-    <View style={styles.card}>
+    <Animated.View style={[styles.card, animatedStyle]}>
       <View style={styles.iconContainer}>
-        <Icon name={item.iconName} type={item.iconType} color={item.color} size={30} />
+        <Icon
+          name={item.iconName}
+          type={item.iconType}
+          color={item.color}
+          size={30}
+        />
       </View>
       <Text style={styles.text}>{item.title}</Text>
-    </View>
+    </Animated.View>
   );
 };
 
@@ -24,15 +62,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     borderRadius: 10,
-    elevation: 2,
-    shadowColor: 'purple',
-    borderColor: 'purple',
-    borderWidth: 0.4,
+    elevation: 5,
+    shadowColor: 'gray',
+    borderColor:"white",
+    borderWidth: 0.6,
   },
   iconContainer: {
     width: 70,
     height: 70,
-    borderRadius:50,
+    borderRadius: 50,
     backgroundColor: '#e6f9ff',
     justifyContent: 'center',
     alignItems: 'center',
@@ -40,7 +78,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     fontFamily: 'Rubik-Light',
-    fontSize:15,
+    fontSize: 15,
   },
 });
 

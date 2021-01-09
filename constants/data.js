@@ -428,7 +428,7 @@ const INDUSTRIES = [
         color: 'purple',
       },
       {
-        title: 'Dollywood',
+        title: 'Dhollywood',
         iconName: 'movie',
         iconType: 'materialicons',
         color: 'purple',
